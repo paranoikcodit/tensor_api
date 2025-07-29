@@ -2,9 +2,25 @@
   "name": "tensor_api",
   "module": "src/index.ts",
   "type": "module",
-  "private": true,
+  "scripts": {
+    "build": "bun run build.ts",
+    "postinstall": "bun run build"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./queries": {
+      "types": "./dist/queries/index.d.ts",
+      "import": "./dist/queries/index.js",
+      "default": "./dist/queries/index.js"
+    }
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "bun-plugin-dts": "^0.3.0"
   },
   "peerDependencies": {
     "typescript": "^5"

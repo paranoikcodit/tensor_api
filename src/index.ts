@@ -1,6 +1,4 @@
-import { Client, cacheExchange, fetchExchange } from "@urql/core";
-
-export { UserPortfolioMints } from "./queries/UserPortfolioMints";
+import {Client, cacheExchange, fetchExchange} from "@urql/core";
 
 export const createClient = () =>
 	new Client({
