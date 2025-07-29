@@ -1,0 +1,16 @@
+{
+  "name": "tensor_api",
+  "module": "src/index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@urql/core": "^5.2.0",
+    "gql.tada": "^1.8.12"
+  }
+}
