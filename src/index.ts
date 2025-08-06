@@ -1,6 +1,8 @@
 import { Client, cacheExchange, fetchExchange } from "@urql/core";
 import { ProxyAgent } from "undici";
 
+export { graphql } from "./graphql";
+
 export const createClient = (proxy?: string) =>
 	new Client({
 		fetchOptions: () => ({
