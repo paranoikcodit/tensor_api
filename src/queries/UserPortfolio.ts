@@ -1,13 +1,9 @@
 import { graphql } from "../graphql";
 
 export const UserPortfolio =
-	graphql(`query UserPortfolio($wallet: String!, $includeUnverified: Boolean, $includeCompressed: Boolean) {
-  stakedTensorians(owner: $wallet) {
-    ...ReducedMintWithColl
-    __typename
-  }
+	graphql(`query UserPortfolio($wallet: [String!]!, $includeUnverified: Boolean, $includeCompressed: Boolean) {
   userActiveListingsV2(
-    wallets: [$wallet]
+    wallets: $wallet
     slug: null
     sortBy: PriceAsc
     includeCompressed: $includeCompressed
@@ -19,7 +15,7 @@ export const UserPortfolio =
     __typename
   }
   userPortfolioCollections(
-    wallets: [$wallet]
+    wallets: $wallet
     includeUnverified: $includeUnverified
     includeCompressed: $includeCompressed
   ) {
@@ -50,24 +46,11 @@ export const UserPortfolio =
     __typename
   }
   userPortfolioBids(
-    wallets: [$wallet]
+    wallets: $wallet
     filterOutOwn: true
     includeCompressed: $includeCompressed
   ) {
     ...ReducedMintBid
-    __typename
-  }
-  userPNL(wallet: $wallet) {
-    totalValue
-    totalCostBasis
-    totalPNL
-    slugPNL {
-      slug
-      value
-      costBasis
-      pnl
-      __typename
-    }
     __typename
   }
 }
