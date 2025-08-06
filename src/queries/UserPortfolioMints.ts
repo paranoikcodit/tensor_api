@@ -2,7 +2,7 @@ import { graphql } from "../graphql";
 
 export const UserPortfolioMints = graphql(`
 query UserPortfolioMints(
-	$sortBy: CollectionMintsSortBy
+	$sortBy: CollectionMintsSortBy!
 	$filters: CollectionMintsFilters
 	$cursor: String
 	$limit: Int

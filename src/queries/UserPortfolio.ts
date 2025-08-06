@@ -18,22 +18,6 @@ export const UserPortfolio =
     }
     __typename
   }
-  userTswapOrders(owner: $wallet) {
-    ...ReducedTSwapPoolWithColl
-    __typename
-  }
-  userHswapOrders(owner: $wallet) {
-    ...ReducedHSwapPoolWithColl
-    __typename
-  }
-  userTAmmOrders(owner: $wallet) {
-    ...ReducedTAmmPoolWithColl
-    __typename
-  }
-  userTcompBids(owner: $wallet) {
-    ...ReducedTCompBidWithColl
-    __typename
-  }
   userPortfolioCollections(
     wallets: [$wallet]
     includeUnverified: $includeUnverified
